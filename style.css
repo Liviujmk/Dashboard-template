@@ -1,5 +1,11 @@
 /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --main-bgColor: #eef2f5;
+  --main-textColor: #646a6e;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -9,6 +15,22 @@
 .body {
   background-color: #fff;
 }
+
+.hd-1{
+  font-weight: 500;
+  font-size: 2.2rem;
+  line-height: 3.798rem;
+}
+
+.sub-heading {
+  font-size: 0.795rem;
+  color: #7c7c7c;
+}
+
+.overflow-y--scroll {
+  overflow-y: auto;
+}
+
 .sidebar{
   position: fixed;
   left: 0;
@@ -151,7 +173,7 @@
   left: 0;
   transform: translateY(-50%);
   font-size: 22px;
-  background: #3a84d8;
+  background: #4c6f97;
   color: #FFF;
   transition: all 0.3s ease;
 }
@@ -201,6 +223,17 @@
 .sidebar li a:focus .links_name {
   font-weight: 500;
 }
+
+.sidebar li a.activeLink {
+  background: var(--main-bgColor) ;
+  font-weight: 500;
+}
+.sidebar li a.activeLink i,
+.sidebar li a.activeLink .links_name {
+  color: var(--main-textColor);
+  font-weight: 500;
+}
+
 .sidebar li i{
   height: 50px;
   line-height: 50px;
@@ -261,8 +294,6 @@
 }
 .home-section{
   position: relative;
-  background: #f5f7fb;
-  min-height: 100vh;
   top: 0;
   left: 78px;
   width: calc(100% - 78px);
@@ -274,24 +305,25 @@
   left: 250px;
   width: calc(100% - 250px);
 }
-.home-section .content{
+
+.full-width {
+  width: 100%;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+}
+
+/*.main-content{
   position: relative;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.home-section .content .text{
-  display: inline-block;
-  color: #11101d;
-  font-size: 25px;
-  font-weight: 500;
-  margin: 18px
-}
+}*/
 @media (max-width: 420px) {
   .sidebar li .tooltip{
     display: none;
@@ -300,7 +332,28 @@
 
 .section {
   position: relative;
-  /* min-height: inherit; */
-  border-radius: 15px;
-  background: rgb(255, 255, 255);
+  height: calc(100vh - 26px - 14px);
+  border-radius: 5px;
+  background: var(--main-bgColor);
+}
+
+.container {
+  display: block;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+.container-grid {
+  padding: 2.5rem;
+}
+
+.container-content {
+  display: flex;
+  flex-direction: column;
+}
+.content-grid {
+  margin: 15px;
+}
+
+.col-2-3 {
+  width: 66%;
 }
